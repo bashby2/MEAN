@@ -28,7 +28,7 @@ function ninjaConsturctor(name){
       return ninja;
     }
   }
-  console.log(ninja);
+  // console.log(ninja);
   return ninja;
 }
 ninjaConsturctor('Brandon');

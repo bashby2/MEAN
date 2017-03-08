@@ -23,14 +23,17 @@
 	Coding is <div id="magic"></div>
 
 	<script>
-		var words = ["fun", "exciting", "about not giving up", "being helpful", "being open", "what I learned at CodingDojo!"],
+		var words = ["fun", "exciting", "about not giving up ", "being helpful ", "being open ", "what I learned at CodingDojo! "],
 			el = document.getElementById('magic'),
 			word_counter = 0,
 			character_counter = 0;
-		function updateText()
-		{
+		function updateText(){
+			if (words[word_counter][character_counter] == " ") {
+				el.innerHTML = el.innerHTML + "&nbsp;";	//adding the &nbsp to keep the scolling going even with the spaces
+				character_counter++;
+			}
 			el.innerHTML = el.innerHTML+words[word_counter][character_counter++];
-			if(character_counter == words[word_counter].length)
+			if(character_counter == words[word_counter].length+1)	// adding a 1 to length to stop the last letter to be cut off
 			{
 				word_counter++; 	//choose a different word
 				character_counter = 0;	//start over with the first character of the word
